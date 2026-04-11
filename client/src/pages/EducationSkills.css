@@ -1,0 +1,409 @@
+.education-skills {
+  min-height: 100vh;
+  padding: 7rem 1.5rem 4rem;
+}
+
+.education-skills-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.education-header {
+  margin-bottom: 3rem;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 1rem;
+  border-radius: 9999px;
+  background: rgba(196,181,253,0.2);
+  border: 1px solid rgba(196,181,253,0.4);
+  color: #7C3AED;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #1E1B4B;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.section-title span {
+  color: #7C3AED;
+}
+
+.subsection-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1E1B4B;
+  margin-bottom: 1.5rem;
+}
+
+.subsection-title span {
+  color: #7C3AED;
+}
+
+/* Education Cards */
+.education-section {
+  margin-bottom: 5rem;
+}
+
+.edu-card {
+  background: #fff;
+  border: 1px solid rgba(196,181,253,0.3);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  margin-top: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.edu-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #C4B5FD, #7C3AED, #A78BFA, #7C3AED, #C4B5FD);
+  background-size: 100% 300%;
+  border-radius: 4px 0 0 4px;
+  animation: gradientFlow 3s ease infinite;
+}
+
+.edu-card:hover {
+  box-shadow: 0 12px 32px rgba(124,58,237,0.12);
+  transform: translateY(-4px);
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 0% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+.edu-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.edu-degree {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1E1B4B;
+}
+
+.edu-badge {
+  padding: 0.25rem 0.85rem;
+  border-radius: 9999px;
+  background: rgba(196,181,253,0.25);
+  color: #7C3AED;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.edu-school {
+  font-size: 0.9rem;
+  color: rgba(30,27,75,0.55);
+  margin-bottom: 0.5rem;
+}
+
+.edu-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.edu-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: rgba(30,27,75,0.45);
+}
+
+.edu-courses {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(196,181,253,0.2);
+}
+
+.edu-courses-label {
+  font-size: 0.75rem;
+  color: rgba(30,27,75,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.6rem;
+}
+
+.edu-courses-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.course-tag {
+  padding: 0.2rem 0.75rem;
+  border-radius: 9999px;
+  background: rgba(167,243,208,0.3);
+  border: 1px solid rgba(167,243,208,0.5);
+  color: rgba(30,27,75,0.65);
+  font-size: 0.75rem;
+}
+
+/* Skills */
+.skills-section {
+  margin-bottom: 3rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.skill-card {
+  background: #fff;
+  border: 1px solid rgba(196,181,253,0.25);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  transition: all 0.25s ease;
+}
+
+.skill-card:hover {
+  box-shadow: 0 6px 24px rgba(124,58,237,0.09);
+  transform: translateY(-3px);
+}
+
+.skill-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.skill-card-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.skill-card-icon.lavender { background: rgba(196,181,253,0.3); }
+.skill-card-icon.blush    { background: rgba(251,207,232,0.4); }
+.skill-card-icon.mint     { background: rgba(167,243,208,0.4); }
+.skill-card-icon.sky      { background: rgba(186,230,253,0.4); }
+
+.skill-card-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1E1B4B;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.skill-tag {
+  padding: 0.25rem 0.7rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(30,27,75,0.7);
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.skill-tag:hover {
+  transform: scale(1.05);
+}
+
+.skill-tag.lavender { background: rgba(196,181,253,0.2); border-color: rgba(196,181,253,0.4); }
+.skill-tag.blush    { background: rgba(251,207,232,0.25); border-color: rgba(251,207,232,0.5); }
+.skill-tag.mint     { background: rgba(167,243,208,0.25); border-color: rgba(167,243,208,0.5); }
+.skill-tag.sky      { background: rgba(186,230,253,0.25); border-color: rgba(186,230,253,0.5); }
+
+.skill-bars {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skill-bar-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.skill-bar-name {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: rgba(30,27,75,0.7);
+}
+
+.skill-bar-pct {
+  font-size: 0.72rem;
+  color: rgba(30,27,75,0.4);
+}
+
+.skill-bar-track {
+  height: 6px;
+  background: rgba(196,181,253,0.15);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  width: 100%;
+  border-radius: 9999px;
+  transform-origin: left;
+}
+
+.skill-bar-fill.lavender { background: linear-gradient(to right, #C4B5FD, #7C3AED); }
+.skill-bar-fill.blush    { background: linear-gradient(to right, #FBCFE8, #ec4899); }
+.skill-bar-fill.mint     { background: linear-gradient(to right, #A7F3D0, #10b981); }
+.skill-bar-fill.sky      { background: linear-gradient(to right, #60A5FA, #2563EB); }
+
+.skill-tag-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.skill-tag-wrapper:hover .skill-tooltip {
+  opacity: 1;
+  transform: translateY(-4px);
+}
+
+.skill-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(0px);
+  background: #1E1B4B;
+  color: #fff;
+  font-size: 0.68rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  margin-bottom: 6px;
+  z-index: 10;
+}
+
+.skill-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: #1E1B4B;
+}
+
+/* Dark Mode */
+.dark .section-title,
+.dark .subsection-title,
+.dark .edu-degree,
+.dark .skill-card-title {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark .edu-school,
+.dark .edu-meta-item,
+.dark .skill-bar-name {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dark .edu-courses-label,
+.dark .skill-bar-pct {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.dark .edu-card,
+.dark .skill-card {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark .edu-card:hover,
+.dark .skill-card:hover {
+  box-shadow: 0 12px 32px rgba(0,0,0,0.6);
+}
+
+.dark .section-tag,
+.dark .edu-badge {
+  background: rgba(124, 58, 237, 0.2);
+  border-color: rgba(124, 58, 237, 0.4);
+  color: #A78BFA;
+}
+
+.dark .skill-tag {
+  color: rgba(255,255,255,0.7);
+}
+
+.dark .skill-tag.lavender {
+  background: rgba(124,58,237,0.25);
+  border-color: rgba(124,58,237,0.4);
+}
+
+.dark .skill-tag.blush {
+  background: rgba(236,72,153,0.2);
+  border-color: rgba(236,72,153,0.4);
+}
+
+.dark .skill-tag.mint {
+  background: rgba(16,185,129,0.2);
+  border-color: rgba(16,185,129,0.4);
+}
+
+.dark .skill-tag.sky {
+  background: rgba(59,130,246,0.2);
+  border-color: rgba(59,130,246,0.4);
+}
+
+.dark .skill-bar-track {
+  background: rgba(255,255,255,0.08);
+}
+
+.dark .skill-tooltip {
+  background: #000;
+  color: #fff;
+}
+
+.dark .course-tag {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.7);
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
