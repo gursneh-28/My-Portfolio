@@ -1,86 +1,51 @@
+import 'dotenv/config'
 import Contact from '../models/Contact.js'
-import nodemailer from 'nodemailer'
+import { Resend } from 'resend'
 
-const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 587,
-  secure: false,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-  tls: {
-    rejectUnauthorized: false,
-  },
-})
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export const submitContact = async (req, res) => {
   try {
     const { name, email, subject, message } = req.body
 
-    if (!name || !email || !message)
+    if (!name || !email || !message) {
       return res.status(400).json({ error: 'All fields are required' })
+    }
 
-    // Save to MongoDB
-    await Contact.create({ name, email, subject, message })
+    // ✅ Save to DB
+    const contact = await Contact.create({ name, email, subject, message })
 
-    // Notify you
-    await transporter.sendMail({
-      from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
-      replyTo: email,
+    console.log('📩 New contact saved:', contact)
+
+    // ✅ Send email to YOU
+    await resend.emails.send({
+      from: 'onboarding@resend.dev',
       to: process.env.EMAIL_USER,
-      subject: `📬 New message: ${subject || 'No subject'}`,
+      subject: `Portfolio: ${subject || 'New message'}`,
       html: `
-        <div style="font-family:sans-serif;max-width:500px;margin:0 auto;padding:24px;border:1px solid #e5e7eb;border-radius:12px;">
-          <h2 style="color:#7C3AED;margin-bottom:16px;">New Portfolio Message</h2>
-          <table style="width:100%;border-collapse:collapse;font-size:14px;">
-            <tr style="border-bottom:1px solid #f3f4f6;">
-              <td style="padding:10px 8px;color:#6b7280;width:80px;">Name</td>
-              <td style="padding:10px 8px;font-weight:600;color:#1e1b4b;">${name}</td>
-            </tr>
-            <tr style="border-bottom:1px solid #f3f4f6;">
-              <td style="padding:10px 8px;color:#6b7280;">Email</td>
-              <td style="padding:10px 8px;color:#1e1b4b;">${email}</td>
-            </tr>
-            <tr style="border-bottom:1px solid #f3f4f6;">
-              <td style="padding:10px 8px;color:#6b7280;">Subject</td>
-              <td style="padding:10px 8px;color:#1e1b4b;">${subject || '—'}</td>
-            </tr>
-          </table>
-          <div style="margin-top:16px;padding:16px;background:#f9fafb;border-radius:8px;font-size:14px;color:#374151;line-height:1.6;">
-            <strong>Message:</strong><br/><br/>${message}
-          </div>
-          <p style="margin-top:16px;font-size:12px;color:#9ca3af;">Sent from your portfolio contact form</p>
-        </div>
+        <h3>New Contact Message</h3>
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p>${message}</p>
       `,
     })
 
-    // Confirmation to sender
-    await transporter.sendMail({
-      from: `"Gursneh Kaur" <${process.env.EMAIL_USER}>`,
+    // ✅ Auto reply to user
+    await resend.emails.send({
+      from: 'onboarding@resend.dev',
       to: email,
-      subject: `Got your message, ${name}! 👋`,
+      subject: `Thanks for reaching out, ${name}!`,
       html: `
-        <div style="font-family:sans-serif;max-width:500px;margin:0 auto;padding:24px;border:1px solid #e5e7eb;border-radius:12px;">
-          <h2 style="color:#7C3AED;">Hey ${name}! 👋</h2>
-          <p style="color:#555;line-height:1.7;font-size:14px;">
-            Thanks for reaching out! I've received your message and will get back to you as soon as possible.
-          </p>
-          <div style="margin:20px 0;padding:16px;background:#f5f3ff;border-left:3px solid #7C3AED;border-radius:4px;font-size:13px;color:#6b7280;">
-            <strong>Your message:</strong><br/><br/>${message}
-          </div>
-          <p style="color:#555;line-height:1.7;font-size:14px;">
-            In the meantime, feel free to check out my work on
-            <a href="https://github.com/gursneh-28" style="color:#7C3AED;">GitHub</a> or connect on
-            <a href="https://linkedin.com/in/gursneh-kaur" style="color:#7C3AED;">LinkedIn</a>.
-          </p>
-          <p style="color:#9ca3af;font-size:12px;margin-top:24px;">— Gursneh Kaur</p>
-        </div>
+        <p>Hi ${name},</p>
+        <p>Thanks for your message! I'll get back to you soon.</p>
+        <p>- Gursneh</p>
       `,
     })
 
-    res.status(201).json({ success: true })
-
+    res.status(201).json({
+      success: true,
+      message: 'Message sent successfully!',
+    })
   } catch (err) {
     console.error('❌ Contact error:', err)
     res.status(500).json({ error: 'Server error' })
