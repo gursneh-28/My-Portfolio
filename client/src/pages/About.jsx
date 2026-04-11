@@ -15,6 +15,8 @@ const infoCards = [
   { label: 'Batch', value: personalInfo.batch, icon: '📅', color: 'lavender' },
 ]
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+
 export default function About() {
   const [avatarOpen, setAvatarOpen] = useState(false)
 
@@ -156,7 +158,7 @@ export default function About() {
 
             <div className="resume-actions">
               <motion.a
-                href="http://localhost:5000/api/cv/pdf"
+                href={`${API_URL}/api/cv/pdf`}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.04 }}
@@ -167,7 +169,7 @@ export default function About() {
               </motion.a>
 
               <motion.a
-                href="http://localhost:5000/api/cv/docx"
+                href={`${API_URL}/api/cv/docx`}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.04 }}

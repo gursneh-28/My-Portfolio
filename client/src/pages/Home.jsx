@@ -15,6 +15,8 @@ const blobs = [
   { cls: 'blob-4', y: [0,-18,0], x: [0,-10,0], dur: 9 },
 ]
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+
 export default function Home() {
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const dropdownRef = useRef(null)
@@ -146,11 +148,11 @@ export default function Home() {
                     exit={{ opacity: 0, y: -6, scale: 0.97 }}
                     transition={{ duration: 0.18, ease: 'easeOut' }}
                   >
-                    <a href="http://localhost:5000/api/cv/pdf" target="_blank" rel="noopener noreferrer">
+                    <a href={`${API_URL}/api/cv/pdf`} target="_blank" rel="noopener noreferrer">
                       Download PDF
                     </a>
                     <div className="btn-download-menu-divider" />
-                    <a href="http://localhost:5000/api/cv/docx" target="_blank" rel="noopener noreferrer">
+                    <a href={`${API_URL}/api/cv/docx`} target="_blank" rel="noopener noreferrer">
                       Download Word
                     </a>
                   </motion.div>
