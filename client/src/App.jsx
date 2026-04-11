@@ -1,5 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
-import { AnimatePresence } from 'framer-motion'
+import { BrowserRouter } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import CursorTrail from './components/CursorTrail'
 import Home from './pages/Home'
@@ -10,29 +9,20 @@ import Experience from './pages/Experience'
 import Contact from './pages/Contact'
 import Certificates from './pages/Certificates'
 
-function AnimatedRoutes() {
-  const location = useLocation()
-  return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/education-skills" element={<EducationSkills />} /> 
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/experience" element={<Experience />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/certificates" element={<Certificates />} />
-      </Routes>
-    </AnimatePresence>
-  )
-}
-
 export default function App() {
   return (
     <BrowserRouter>
       <CursorTrail />
       <Navbar />
-      <AnimatedRoutes />
+      <main className="single-page-layout" style={{ position: 'relative', overflowX: 'hidden' }}>
+        <section id="home"><Home /></section>
+        <section id="about"><About /></section>
+        <section id="education-skills"><EducationSkills /></section>
+        <section id="experience"><Experience /></section>
+        <section id="projects"><Projects /></section>
+        <section id="certificates"><Certificates /></section>
+        <section id="contact"><Contact /></section>
+      </main>
     </BrowserRouter>
   )
 }

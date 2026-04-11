@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { Link } from 'react-router-dom'
+// removed Link from react-router-dom
 import { ArrowRight, Download } from 'lucide-react'
 import PageTransition from '../components/PageTransition'
 import { personalInfo } from '../data/portfolioData'
@@ -107,7 +107,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div variants={fadeUp} className="home-ctas">
-            <Link to="/projects">
+            <a href="#projects" onClick={(e) => { e.preventDefault(); document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}}>
               <motion.span
                 className="btn-primary"
                 whileHover={{ scale: 1.04 }}
@@ -115,9 +115,9 @@ export default function Home() {
               >
                 View Projects <ArrowRight size={15} />
               </motion.span>
-            </Link>
+            </a>
 
-            <Link to="/contact">
+            <a href="#contact" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}}>
               <motion.span
                 className="btn-secondary"
                 whileHover={{ scale: 1.04 }}
@@ -125,7 +125,7 @@ export default function Home() {
               >
                 Get in touch
               </motion.span>
-            </Link>
+            </a>
 
             <div className="btn-download-wrapper" ref={dropdownRef}>
               <motion.button
