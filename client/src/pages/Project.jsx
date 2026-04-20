@@ -13,12 +13,14 @@ const GithubIcon = () => (
 )
 
 const projectIcons = {
-  'Green Light Traffic Analyzer':       '🚦',
-  'Biometric Face Recognition System':  '👁',
-  'Phishing Detection Chrome Extension':'🛡',
-  'Event Vibes':                        '🎉',
-  'MERN Todo App':                      '✅',
-  'Crowdsourced Collaboration Platform':'🤝',
+  'LenDen – Community Marketplace App':          '🛍',
+  'Visual Scene Explainer for Blind Persons':    '👁',
+  'Green Light Traffic Analyzer':                '🚦',
+  'Biometric Face Recognition System':           '🔐',
+  'Phishing Detection Chrome Extension':         '🛡',
+  'Event Vibes':                                 '🎉',
+  'MERN Todo App':                               '✅',
+  'Crowdsourced Collaboration Platform':         '🤝',
 }
 
 const allTags = ['All', ...new Set(projects.flatMap(p => p.tags))]
@@ -133,7 +135,12 @@ export default function Projects() {
                     </div>
 
                     <div>
-                      <div className="project-year">{project.year}</div>
+                      <div className="project-year">
+                        {project.year}
+                        {project.status === 'ongoing' && (
+                          <span className="project-ongoing-badge">● Ongoing</span>
+                        )}
+                      </div>
                       <div className="project-title">{project.title}</div>
                     </div>
 

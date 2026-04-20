@@ -37,6 +37,15 @@ export const skills = [
     ]
   },
   {
+    category: "Mobile Development",
+    color: "sky",
+    items: ["React Native", "Expo Router"],
+    proficiency: [
+      { name: "React Native", level: 72 },
+      { name: "Expo Router",  level: 68 },
+    ]
+  },
+  {
     category: "Databases",
     color: "mint",
     items: ["MySQL", "MongoDB", "Cloudinary"],
@@ -48,12 +57,12 @@ export const skills = [
   {
     category: "ML / CV",
     color: "sky",
-    items: ["OpenCV", "YOLO", "TensorFlow", "MTCNN"],
+    items: ["TensorFlow", "OpenCV", "YOLO", "MTCNN"],
     proficiency: [
-      { name: "OpenCV", level: 82 },
-      { name: "YOLO", level: 78 },
+      { name: "OpenCV",     level: 82 },
+      { name: "YOLO",       level: 78 },
       { name: "TensorFlow", level: 70 },
-      { name: "MTCNN", level: 72 },
+      { name: "MTCNN",      level: 72 },
     ]
   },
   {
@@ -115,44 +124,75 @@ export const experience = [
 
 export const projects = [
   {
+    title: "LenDen – Community Marketplace App",
+    year: "2026",
+    status: "ongoing",
+    tags: ["React Native", "Expo Router", "Node.js", "MongoDB"],
+    color: "lavender",
+    description:
+      "Cross-platform mobile marketplace for students to buy, sell, rent items, and post service requests. Features JWT + bcrypt auth, Cloudinary image hosting, and ownership-based access control with full CRUD REST API.",
+    github: "https://github.com/gursneh-28/LenDen-An-e-commerce-app.git",
+    live: "",
+  },
+  {
+    title: "Visual Scene Explainer for Blind Persons",
+    year: "2026",
+    status: "ongoing",
+    tags: ["Computer Vision", "NLP", "Python", "AI"],
+    color: "sky",
+    description:
+      "Accessibility-focused AI tool that captures real-time camera frames and generates descriptive audio narrations to assist visually impaired users. Integrates CV and NLP pipelines for contextual scene descriptions.",
+    github: "https://github.com/gursneh-28/Visual-Scene-Explainer-for-the-Blind-An-AI-Assistive-Chatbot-for-Real-Time-Scene-Understanding.git",
+    live: "",
+  },
+  {
     title: "Green Light Traffic Analyzer",
     year: "2025",
+    status: "done",
     tags: ["YOLO", "OpenCV", "Deep Learning", "Python"],
     color: "mint",
     description:
       "Real-time computer vision system to detect vehicles and analyze traffic density from live footage. Achieved 17.8% efficiency improvement with adaptive green light duration (15–27s) based on queue length.",
     github: "https://github.com/gursneh-28/Green-Traffic-Analyzer---Final.git",
+    live: "",
   },
   {
     title: "Biometric Face Recognition System",
     year: "2024",
+    status: "done",
     tags: ["MTCNN", "TensorFlow", "Deep Learning", "Python"],
     color: "lavender",
     description:
       "Real-time face recognition using MTCNN for detection and a deep learning model generating 128-dimensional face embeddings. Identity verification via Euclidean distance on live webcam feed.",
     github: "https://github.com/gursneh-28/Biometric-Face-Recognition-and-Access-Control.git",
+    live: "",
   },
   {
     title: "Phishing Detection Chrome Extension",
     year: "2024",
+    status: "done",
     tags: ["ML", "JavaScript", "Chrome API", "Python"],
     color: "blush",
     description:
       "Chrome extension that analyzes URLs in real time and classifies them as safe or phishing. Extended with a website-category classifier covering Education, Shopping, News, Social Media, and Adult.",
     github: "https://github.com/harshita2202/CyberProject.git",
+    live: "",
   },
   {
     title: "Event Vibes",
     year: "2024",
+    status: "done",
     tags: ["React.js", "Node.js", "MongoDB", "Cloudinary"],
     color: "sky",
     description:
       "Full-stack media management platform enabling 200+ students to upload, like, comment, and download event media. Admin dashboard with role-based access across 50+ annual college events.",
     github: "https://github.com/harshita2202/Event-Vibes.git",
+    live: "",
   },
   {
     title: "MERN Todo App",
     year: "2024",
+    status: "done",
     tags: ["MongoDB", "Express.js", "React.js", "Node.js"],
     color: "mint",
     description:
