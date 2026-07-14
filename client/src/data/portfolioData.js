@@ -57,7 +57,7 @@ export const skills = [
   {
     category: "ML / CV",
     color: "sky",
-    items: ["TensorFlow", "OpenCV", "YOLO", "MTCNN"],
+    items: ["TensorFlow", "PyTorch", "OpenCV", "YOLO", "MTCNN"],
     proficiency: [
       { name: "OpenCV",     level: 82 },
       { name: "YOLO",       level: 78 },
@@ -86,13 +86,29 @@ export const skills = [
   },
 ]
 
+// Order mirrors the resume's Experience section (Research Experience first,
+// then internships). Each entry now carries its certificate link so the two
+// stay in sync going forward.
 export const experience = [
+  {
+    role: "AI Vicharana Shala Bootcamp Research Intern",
+    company: "IIT Ropar",
+    duration: "May 2024 – Jul 2024",
+    type: "Research Internship",
+    color: "sky",
+    certificate: "https://drive.google.com/file/d/1NNPWEMhhg23NiEW7H6hxsDPXtQgS5zH0/view?usp=drive_link",
+    points: [
+      "Mastered foundational AI concepts under Prof. Sudarshan Iyengar (HOD, CSE) through mathematical intuition and theoretical frameworks spanning statistical learning and optimization theory.",
+      "Implemented machine learning algorithms and neural networks from scratch, achieving 95% accuracy on benchmark datasets.",
+    ],
+  },
   {
     role: "AI Intern",
     company: "AICTE Edunet Foundation",
     duration: "Oct 2025 – Nov 2025",
     type: "Internship",
     color: "lavender",
+    certificate: "https://drive.google.com/file/d/1yJidrJr1iqGCC2Pp3scId7zibeEsvdjJ/view?usp=drive_link",
     points: [
       "Built Green Light Traffic Analyzer using computer vision and deep learning, achieving 17.8% improvement in traffic flow efficiency.",
       "Implemented YOLO object detection for high-accuracy vehicle counting and density analysis, processing 15+ FPS in real time.",
@@ -105,8 +121,9 @@ export const experience = [
     duration: "May 2025 – Jul 2025",
     type: "Internship",
     color: "blush",
+    certificate: "https://drive.google.com/file/d/1814MmkqReDILZ27wvoinhUa9RlBfQNkd/view?usp=drive_link",
     points: [
-      "Built and deployed responsive, full-stack web applications using React.js, Node.js, Express.js, and MongoDB.",
+      "Built and deployed 3+ responsive, full-stack web applications using React.js, Node.js, Express.js, and MongoDB, with a RESTful API architecture using JWT authentication and role-based access control.",
     ],
   },
   {
@@ -115,6 +132,7 @@ export const experience = [
     duration: "May 2025 – Jul 2025",
     type: "Internship",
     color: "mint",
+    certificate: "https://drive.google.com/file/d/18FAN4CYPr8q4bqGYnasEJPPwHEsd62z8/view?usp=drive_link",
     points: [
       "Enhanced Salesforce CRM platforms for client-specific requirements, automating business workflows using Apex and Visualforce.",
       "Created custom dashboards and reports to improve data visualization and support business decision-making.",
@@ -141,7 +159,7 @@ export const projects = [
     tags: ["Computer Vision", "NLP", "Python", "AI"],
     color: "sky",
     description:
-      "Accessibility-focused AI tool that captures real-time camera frames and generates descriptive audio narrations to assist visually impaired users. Integrates CV and NLP pipelines for contextual scene descriptions.",
+      "Accessibility-focused AI tool that captures real-time camera frames and generates descriptive audio narrations to assist visually impaired users. Integrates CV and NLG pipelines for contextual scene descriptions.",
     github: "https://github.com/gursneh-28/Visual-Scene-Explainer-for-the-Blind-An-AI-Assistive-Chatbot-for-Real-Time-Scene-Understanding.git",
     live: "",
   },
@@ -152,7 +170,7 @@ export const projects = [
     tags: ["YOLO", "OpenCV", "Deep Learning", "Python"],
     color: "mint",
     description:
-      "Real-time computer vision system to detect vehicles and analyze traffic density from live footage. Achieved 17.8% efficiency improvement with adaptive green light duration (15–27s) based on queue length.",
+      "Extended the AICTE traffic-signal system into a production-grade platform: replaced fixed-cycle logic with a pressure-score model inspired by SCOOT/SCATS, added emission modeling, a live processing pipeline, an interactive observability dashboard, and config/logging infrastructure, validated with a 42-test pytest suite. Achieved 17.8% efficiency improvement with adaptive green light duration (15–27s) based on queue length.",
     github: "https://github.com/gursneh-28/Green-Traffic-Analyzer---Final.git",
     live: "",
   },
@@ -202,16 +220,13 @@ export const projects = [
   },
 ]
 
+// AI Vicharana Shala moved to `experience` (matches resume's Research
+// Experience entry) and removed from here to avoid duplicating it.
 export const achievements = [
   {
     title: "Visiting Student — IIT Gandhinagar",
     desc: "Selected for Semester IV exchange program (2025).",
     color: "lavender",
-  },
-  {
-    title: "AI Vicharana Shala — IIT Ropar",
-    desc: "Selected with full institute scholarship for AI research program (2024).",
-    color: "mint",
   },
   {
     title: "Google Build With India Challenge",
