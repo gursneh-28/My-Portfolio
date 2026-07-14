@@ -6,7 +6,8 @@ export const personalInfo = {
   phone: "+91 8058055220",
   linkedin: "https://www.linkedin.com/in/gursneh-kaur-73466527b/",
   github: "https://github.com/gursneh-28",
-  location: "Jaipur, Rajasthan",
+  portfolio: "https://my-portfolio-eight-pi-30.vercel.app",
+  location: "Kota, Rajasthan, India",
   university: "JK Lakshmipat University",
   degree: "B.Tech in Computer Science and Engineering",
   cgpa: "8.74 / 10.0",
@@ -17,12 +18,22 @@ export const skills = [
   {
     category: "Languages",
     color: "lavender",
-    items: ["Python", "JavaScript", "C", "C++", "Rust"],
+    items: ["Python", "JavaScript", "C", "C++", "Rust", "x86 Assembly (NASM)"],
     proficiency: [
       { name: "Python",     level: 90 },
       { name: "JavaScript", level: 85 },
       { name: "C/C++",      level: 75 },
       { name: "Rust",       level: 55 },
+    ]
+  },
+  {
+    category: "Systems & OS",
+    color: "gray",
+    items: ["Preemptive Scheduling", "Memory Management", "Syscall Interfaces", "ELF Loading", "Filesystems", "GRUB/Multiboot", "QEMU"],
+    proficiency: [
+      { name: "Memory Management", level: 70 },
+      { name: "Scheduling",        level: 68 },
+      { name: "Syscall Interfaces",level: 65 },
     ]
   },
   {
@@ -48,7 +59,7 @@ export const skills = [
   {
     category: "Databases",
     color: "mint",
-    items: ["MySQL", "MongoDB", "Cloudinary"],
+    items: ["MySQL", "MongoDB", "PostgreSQL", "Redis", "SQLite", "Cloudinary"],
     proficiency: [
       { name: "MongoDB", level: 80 },
       { name: "MySQL",   level: 75 },
@@ -57,7 +68,7 @@ export const skills = [
   {
     category: "ML / CV",
     color: "sky",
-    items: ["TensorFlow", "PyTorch", "OpenCV", "YOLO", "MTCNN"],
+    items: ["TensorFlow", "PyTorch", "OpenCV", "YOLO", "MTCNN", "NLP"],
     proficiency: [
       { name: "OpenCV",     level: 82 },
       { name: "YOLO",       level: 78 },
@@ -68,7 +79,7 @@ export const skills = [
   {
     category: "Cloud & DevOps",
     color: "lavender",
-    items: ["Docker", "Git", "Linux"],
+    items: ["Docker", "Git", "Linux", "Salesforce (Apex, Visualforce)"],
     proficiency: [
       { name: "Git",    level: 88 },
       { name: "Linux",  level: 72 },
@@ -86,10 +97,43 @@ export const skills = [
   },
 ]
 
-// Order mirrors the resume's Experience section (Research Experience first,
-// then internships). Each entry now carries its certificate link so the two
-// stay in sync going forward.
+// Order and wording now mirror the resume's Experience section exactly
+// (AICTE -> AI ShipShape -> MTX -> IIT Ropar research internship).
 export const experience = [
+  {
+    role: "AI Intern",
+    company: "AICTE Edunet Foundation",
+    duration: "Oct 2025 – Nov 2025",
+    type: "Internship",
+    color: "lavender",
+    certificate: "https://drive.google.com/file/d/1yJidrJr1iqGCC2Pp3scId7zibeEsvdjJ/view?usp=drive_link",
+    points: [
+      "Built a real-time computer vision system for adaptive traffic signal control (YOLO-based vehicle detection), achieving a 17.8% improvement in traffic flow efficiency with adaptive green time of 15–27s within a 90–95s cycle.",
+      "Engineered a vehicle counting and density-analysis pipeline processing 15+ FPS in real time, computing optimal green-light duration from live queue length and flow patterns.",
+    ],
+  },
+  {
+    role: "Web Developer",
+    company: "AI ShipShape Pvt. Ltd. (UK)",
+    duration: "May 2025 – Jul 2025",
+    type: "Internship",
+    color: "blush",
+    certificate: "https://drive.google.com/file/d/1814MmkqReDILZ27wvoinhUa9RlBfQNkd/view?usp=drive_link",
+    points: [
+      "Built and deployed 3+ full-stack web applications (React.js, Node.js, Express.js, MongoDB) with a RESTful API architecture using JWT authentication and role-based access control, serving real production users.",
+    ],
+  },
+  {
+    role: "Salesforce Developer Intern",
+    company: "MTX Group",
+    duration: "May 2025 – Jul 2025",
+    type: "Internship",
+    color: "mint",
+    certificate: "https://drive.google.com/file/d/18FAN4CYPr8q4bqGYnasEJPPwHEsd62z8/view?usp=drive_link",
+    points: [
+      "Automated enterprise business workflows using Apex and Visualforce and built custom CRM dashboards/reports, reducing manual effort and improving data visibility for client teams.",
+    ],
+  },
   {
     role: "AI Vicharana Shala Bootcamp Research Intern",
     company: "IIT Ropar",
@@ -102,70 +146,34 @@ export const experience = [
       "Implemented machine learning algorithms and neural networks from scratch, achieving 95% accuracy on benchmark datasets.",
     ],
   },
-  {
-    role: "AI Intern",
-    company: "AICTE Edunet Foundation",
-    duration: "Oct 2025 – Nov 2025",
-    type: "Internship",
-    color: "lavender",
-    certificate: "https://drive.google.com/file/d/1yJidrJr1iqGCC2Pp3scId7zibeEsvdjJ/view?usp=drive_link",
-    points: [
-      "Built Green Light Traffic Analyzer using computer vision and deep learning, achieving 17.8% improvement in traffic flow efficiency.",
-      "Implemented YOLO object detection for high-accuracy vehicle counting and density analysis, processing 15+ FPS in real time.",
-      "Engineered an adaptive algorithm to dynamically calculate optimal green light duration based on vehicle queue length and traffic patterns.",
-    ],
-  },
-  {
-    role: "Web Developer",
-    company: "AI ShipShape Pvt. Ltd.",
-    duration: "May 2025 – Jul 2025",
-    type: "Internship",
-    color: "blush",
-    certificate: "https://drive.google.com/file/d/1814MmkqReDILZ27wvoinhUa9RlBfQNkd/view?usp=drive_link",
-    points: [
-      "Built and deployed 3+ responsive, full-stack web applications using React.js, Node.js, Express.js, and MongoDB, with a RESTful API architecture using JWT authentication and role-based access control.",
-    ],
-  },
-  {
-    role: "Salesforce Developer Intern",
-    company: "MTX",
-    duration: "May 2025 – Jul 2025",
-    type: "Internship",
-    color: "mint",
-    certificate: "https://drive.google.com/file/d/18FAN4CYPr8q4bqGYnasEJPPwHEsd62z8/view?usp=drive_link",
-    points: [
-      "Enhanced Salesforce CRM platforms for client-specific requirements, automating business workflows using Apex and Visualforce.",
-      "Created custom dashboards and reports to improve data visualization and support business decision-making.",
-    ],
-  },
 ]
 
 export const projects = [
   {
-    title: "LenDen – Community Marketplace App",
+    title: "myOS – x86 Operating System Built From Scratch",
     year: "2026",
     status: "ongoing",
-    tags: ["React Native", "Expo Router", "Node.js", "MongoDB"],
+    tags: ["C", "NASM", "x86", "OS Dev"],
     color: "lavender",
     description:
-      "Cross-platform mobile marketplace for students to buy, sell, rent items, and post service requests. Features JWT + bcrypt auth, Cloudinary image hosting, and ownership-based access control with full CRUD REST API.",
-    github: "https://github.com/gursneh-28/LenDen-An-e-commerce-app.git",
+      "Hobby x86 operating system built in C and NASM assembly, booting via GRUB multiboot and running on QEMU. Features a preemptive scheduler with context switching, Ring 3 user-mode execution, a full syscall interface, an ELF loader, a ramdisk filesystem, a paging-based heap allocator, and an interactive shell.",
+    github: "https://github.com/gursneh-28/myOS.git",
     live: "",
   },
   {
     title: "Visual Scene Explainer for Blind Persons",
-    year: "2026",
+    year: "2025 – 2026",
     status: "ongoing",
     tags: ["Computer Vision", "NLP", "Python", "AI"],
     color: "sky",
     description:
-      "Accessibility-focused AI tool that captures real-time camera frames and generates descriptive audio narrations to assist visually impaired users. Integrates CV and NLG pipelines for contextual scene descriptions.",
-    github: "https://github.com/gursneh-28/Visual-Scene-Explainer-for-the-Blind-An-AI-Assistive-Chatbot-for-Real-Time-Scene-Understanding.git",
+      "Accessibility-focused AI tool combining real-time computer vision and NLG to generate contextual, human-readable audio scene descriptions from live camera frames for visually impaired users.",
+    github: "https://github.com/gursneh-28/Smart-Visual-Scene-Explainer-for-Blinds.git",
     live: "",
   },
   {
     title: "Green Light Traffic Analyzer",
-    year: "2025",
+    year: "2025 – 2026",
     status: "done",
     tags: ["YOLO", "OpenCV", "Deep Learning", "Python"],
     color: "mint",
@@ -176,13 +184,35 @@ export const projects = [
   },
   {
     title: "Biometric Face Recognition System",
-    year: "2024",
+    year: "2025",
     status: "done",
     tags: ["MTCNN", "TensorFlow", "Deep Learning", "Python"],
     color: "lavender",
     description:
       "Real-time face recognition using MTCNN for detection and a deep learning model generating 128-dimensional face embeddings. Identity verification via Euclidean distance on live webcam feed.",
     github: "https://github.com/gursneh-28/Biometric-Face-Recognition-and-Access-Control.git",
+    live: "",
+  },
+  {
+    title: "LenDen – Community Marketplace App",
+    year: "2026",
+    status: "ongoing",
+    tags: ["React Native", "Expo Router", "Node.js", "MongoDB"],
+    color: "blush",
+    description:
+      "Cross-platform community marketplace app for students to buy, sell, rent items, and post service requests, with Razorpay payments and role-based access control (React Native, Node.js/Express.js, MongoDB).",
+    github: "https://github.com/gursneh-28/LenDen-An-e-commerce-app.git",
+    live: "",
+  },
+  {
+    title: "Event Vibes",
+    year: "2024",
+    status: "done",
+    tags: ["React.js", "Node.js", "MongoDB", "Cloudinary"],
+    color: "sky",
+    description:
+      "Full-stack event media platform serving 200+ students, enabling upload, like, comment, and download of media, with an admin dashboard across 50+ annual college events.",
+    github: "https://github.com/harshita2202/Event-Vibes.git",
     live: "",
   },
   {
@@ -194,17 +224,6 @@ export const projects = [
     description:
       "Chrome extension that analyzes URLs in real time and classifies them as safe or phishing. Extended with a website-category classifier covering Education, Shopping, News, Social Media, and Adult.",
     github: "https://github.com/harshita2202/CyberProject.git",
-    live: "",
-  },
-  {
-    title: "Event Vibes",
-    year: "2024",
-    status: "done",
-    tags: ["React.js", "Node.js", "MongoDB", "Cloudinary"],
-    color: "sky",
-    description:
-      "Full-stack media management platform enabling 200+ students to upload, like, comment, and download event media. Admin dashboard with role-based access across 50+ annual college events.",
-    github: "https://github.com/harshita2202/Event-Vibes.git",
     live: "",
   },
   {
@@ -220,8 +239,6 @@ export const projects = [
   },
 ]
 
-// AI Vicharana Shala moved to `experience` (matches resume's Research
-// Experience entry) and removed from here to avoid duplicating it.
 export const achievements = [
   {
     title: "Visiting Student — IIT Gandhinagar",
@@ -230,7 +247,7 @@ export const achievements = [
   },
   {
     title: "Google Build With India Challenge",
-    desc: "Ranked in top 5,000 out of 25,000+ repositories for SolutionsChallenge 2025.",
+    desc: "Ranked in top 5,000 out of 25,000+ repositories for a full-stack platform centralizing faculty tasks (2025).",
     color: "sky",
   },
   {
@@ -239,8 +256,10 @@ export const achievements = [
     color: "blush",
   },
   {
+    // NOTE: your two source documents disagree here — the portfolio data said
+    // 75%, the new resume says 100%. Using the resume's figure; flag if wrong.
     title: "Merit Scholarship — JKLU",
-    desc: "Awarded 50% scholarship, increased to 75% through consistent academic performance (2023–2027).",
+    desc: "Awarded 50% scholarship, increased to 100% through consistent academic performance (2023–2027).",
     color: "lavender",
   },
   {
