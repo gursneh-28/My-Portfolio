@@ -97,8 +97,6 @@ export const skills = [
   },
 ]
 
-// Order and wording now mirror the resume's Experience section exactly
-// (AICTE -> AI ShipShape -> MTX -> IIT Ropar research internship).
 export const experience = [
   {
     role: "AI Intern",
@@ -152,7 +150,7 @@ export const projects = [
   {
     title: "myOS – x86 Operating System Built From Scratch",
     year: "2026",
-    status: "ongoing",
+    status: "done",
     tags: ["C", "NASM", "x86", "OS Dev"],
     color: "lavender",
     description:
@@ -163,7 +161,7 @@ export const projects = [
   {
     title: "Visual Scene Explainer for Blind Persons",
     year: "2025 – 2026",
-    status: "ongoing",
+    status: "done",
     tags: ["Computer Vision", "NLP", "Python", "AI"],
     color: "sky",
     description:
@@ -196,7 +194,7 @@ export const projects = [
   {
     title: "LenDen – Community Marketplace App",
     year: "2026",
-    status: "ongoing",
+    status: "done",
     tags: ["React Native", "Expo Router", "Node.js", "MongoDB"],
     color: "blush",
     description:

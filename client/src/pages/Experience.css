@@ -175,6 +175,11 @@
   background: linear-gradient(to right, #A7F3D0, #10b981);
 }
 
+.exp-card-accent.sky {
+  background: linear-gradient(to right, #BAE6FD, #0284c7);
+}
+
+
 /* Card header */
 .exp-card-header {
   display: flex;
@@ -237,6 +242,11 @@
   color: #065f46;
 }
 
+.exp-type-badge.sky {
+  background: rgba(186, 230, 253, 0.35);
+  color: #0369a1;
+}
+
 /* Points */
 .exp-points {
   list-style: none;
@@ -262,6 +272,7 @@
 .exp-point-bullet.lavender { background: #C4B5FD; }
 .exp-point-bullet.blush    { background: #FBCFE8; }
 .exp-point-bullet.mint     { background: #A7F3D0; }
+.exp-point-bullet.sky { background: #BAE6FD; }
 
 .exp-point-text {
   font-size: 0.88rem;
@@ -340,10 +351,16 @@
   color: #34d399;
 }
 
+.dark .exp-type-badge.sky {
+  background: rgba(2, 132, 199, 0.2);
+  color: #38bdf8;
+}
+
 /* Bullets */
 .dark .exp-point-bullet.lavender { background: #A78BFA; }
 .dark .exp-point-bullet.blush    { background: #f472b6; }
 .dark .exp-point-bullet.mint     { background: #34d399; }
+.dark .exp-point-bullet.sky { background: #38bdf8; }
 
 /* Stats */
 .dark .exp-stat-number {
