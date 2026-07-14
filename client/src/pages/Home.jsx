@@ -34,7 +34,7 @@ export default function Home() {
   const stats = [
     { number: '8.74', label: 'CGPA' },
     { number: '5+', label: 'Projects' },
-    { number: '3', label: 'Internships' },
+    { number: '4', label: 'Internships' },
     { number: '2023-27', label: 'BTech' },
   ]
 

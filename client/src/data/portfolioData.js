@@ -28,7 +28,7 @@ export const skills = [
   },
   {
     category: "Systems & OS",
-    color: "gray",
+    color: "mint",
     items: ["Preemptive Scheduling", "Memory Management", "Syscall Interfaces", "ELF Loading", "Filesystems", "GRUB/Multiboot", "QEMU"],
     proficiency: [
       { name: "Memory Management", level: 70 },
@@ -58,7 +58,7 @@ export const skills = [
   },
   {
     category: "Databases",
-    color: "mint",
+    color: "lavender",
     items: ["MySQL", "MongoDB", "PostgreSQL", "Redis", "SQLite", "Cloudinary"],
     proficiency: [
       { name: "MongoDB", level: 80 },
@@ -67,7 +67,7 @@ export const skills = [
   },
   {
     category: "ML / CV",
-    color: "sky",
+    color: "mint",
     items: ["TensorFlow", "PyTorch", "OpenCV", "YOLO", "MTCNN", "NLP"],
     proficiency: [
       { name: "OpenCV",     level: 82 },
@@ -78,7 +78,7 @@ export const skills = [
   },
   {
     category: "Cloud & DevOps",
-    color: "lavender",
+    color: "blush",
     items: ["Docker", "Git", "Linux", "Salesforce (Apex, Visualforce)"],
     proficiency: [
       { name: "Git",    level: 88 },
@@ -88,7 +88,7 @@ export const skills = [
   },
   {
     category: "Tools",
-    color: "blush",
+    color: "sky",
     items: ["VS Code", "Wireshark"],
     proficiency: [
       { name: "VS Code",   level: 92 },
@@ -254,16 +254,21 @@ export const achievements = [
     color: "blush",
   },
   {
-    // NOTE: your two source documents disagree here — the portfolio data said
-    // 75%, the new resume says 100%. Using the resume's figure; flag if wrong.
+
     title: "Merit Scholarship — JKLU",
     desc: "Awarded 50% scholarship, increased to 100% through consistent academic performance (2023–2027).",
-    color: "lavender",
+    color: "sky",
   },
   {
     title: "Teaching Assistant",
-    desc: "Python and DAA course, JKLU (Jul–Dec 2024).",
+    desc: "Python and DAA course, JKLU",
     color: "mint",
+  },
+
+  {
+  title: "AI Vicharana Shala Bootcamp — IIT Ropar",
+  desc: "Selected for a research bootcamp under Prof. Sudarshan Iyengar (HOD, CSE); implemented ML algorithms and neural networks from scratch, achieving 95% accuracy (2024).",
+  color: "lavender",
   },
 ]
 

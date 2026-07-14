@@ -11,7 +11,7 @@ const slideIn = {
 }
 
 const stats = [
-  { number: '3', label: 'Internships' },
+  { number: '4', label: 'Internships' },
   { number: '2', label: 'Months avg. tenure' },
   { number: '3+', label: 'Tech stacks used' },
   { number: '2025', label: 'Latest role' },
